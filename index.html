@@ -28,7 +28,7 @@
         0 14px 28px -10px rgba(154, 102, 72, 0.16),
         inset 0 2px 6px rgba(255, 255, 255, 0.9),
         inset 0 -4px 10px rgba(232, 180, 148, 0.14);
-      --glare: rgba(255, 255, 255, 0.55);
+      --glare: rgba(255, 224, 198, 0.55);
     }
 
     [data-theme="cozy-night"] {
@@ -402,11 +402,18 @@
       content: "";
       position: absolute;
       inset: 0;
+      z-index: 0;
+      transform: translateZ(0px);
       border-radius: inherit;
       background: radial-gradient(circle at var(--mx, 50%) var(--my, 30%), var(--glare), transparent 62%);
       opacity: 0.85;
       pointer-events: none;
       transition: opacity 0.25s ease;
+    }
+
+    .card-face > * {
+      position: relative;
+      z-index: 2;
     }
 
     .card-face-back {
@@ -587,11 +594,18 @@
       content: "";
       position: absolute;
       inset: 0;
+      z-index: 0;
+      transform: translateZ(0px);
       border-radius: inherit;
       background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), var(--glare), transparent 58%);
       opacity: 0;
       transition: opacity 0.25s ease;
       pointer-events: none;
+    }
+
+    .bento-card > * {
+      position: relative;
+      z-index: 2;
     }
 
     .bento-card:hover::after {
